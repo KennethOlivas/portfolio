@@ -2,8 +2,7 @@ import React, { FC } from 'react';
 import { Cursor, useTypewriter } from 'react-simple-typewriter';
 import BackgroundCircle from '@components/Hero/BackgroundCircle';
 import dynamic from 'next/dynamic';
-import { Spinner } from '@components/Room/loader';
-import Link from 'next/link';
+import Spinner from '@components/Spiner';
 import FooterButtons from './FooterButtons';
 
 type Props = {

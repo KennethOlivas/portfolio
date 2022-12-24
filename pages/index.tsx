@@ -1,20 +1,7 @@
 import Head from 'next/head';
-import Image from 'next/image';
-import { Inter } from '@next/font/google';
-import styles from '../styles/Home.module.css';
 import Header from '@components/Header';
 import Hero from '@components/Hero/Hero';
-import dynamic from 'next/dynamic';
-import VoxelDogLoader from '@components/Room/loader';
-import Voxel from '@components/Room/vox';
 import About from '@components/About/About';
-
-const inter = Inter({ subsets: ['latin'] });
-
-const LazyRenderObject = dynamic(() => import('@components/Room/vox'), {
-  ssr: false,
-  loading: () => <Voxel />,
-});
 
 export default function Home() {
   return (
