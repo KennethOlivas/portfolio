@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer components {
+    .button {
+        @apply px-6 py-2 border border-[#242424] rounded-md uppercase text-xs tracking-widest text-gray-300 
+        transition-all hover:border hover:shadow-lg hover:shadow-[#f70a59]/40 hover:bg-[#f70a59] hover:border-[#f70a59]/40 hover:text-white duration-150 
+    }
+}
