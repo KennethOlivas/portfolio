@@ -1,5 +1,3 @@
-
-import React from 'react'
 import Image from 'next/image';
 
 const Profile = () => {
@@ -14,6 +12,6 @@ const Profile = () => {
       />
     </>
   );
-}
+};
 
-export default Profile
+export default Profile;

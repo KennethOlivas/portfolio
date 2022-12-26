@@ -1,8 +1,8 @@
-import Head from 'next/head';
+import About from '@components/About/About';
 import Header from '@components/Header';
 import Hero from '@components/Hero/Hero';
-import About from '@components/About/About';
 import WorkExperience from '@components/WorkExperience/WorkExperience';
+import Head from 'next/head';
 
 export default function Home() {
   return (

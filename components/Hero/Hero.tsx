@@ -1,8 +1,9 @@
+import BackgroundCircle from '@components/Hero/BackgroundCircle';
+import Spinner from '@components/Spiner';
+import dynamic from 'next/dynamic';
 import React, { FC } from 'react';
 import { Cursor, useTypewriter } from 'react-simple-typewriter';
-import BackgroundCircle from '@components/Hero/BackgroundCircle';
-import dynamic from 'next/dynamic';
-import Spinner from '@components/Spiner';
+
 import FooterButtons from './FooterButtons';
 
 type Props = {
