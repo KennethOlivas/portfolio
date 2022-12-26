@@ -1,38 +1,49 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import Header from '@components/WorkExperience/Header';
+import JavascriptIcon from '@icons/JavascriptIcon';
+import SvelteIcon from '@icons/SvelteIcon';
+import TailwindIcon from '@icons/TailwindIcon';
+import { Icon } from 'types';
 
-type Props = {};
+import CompanyImage from './CompanyImage';
+import SumaryList from './SumaryList';
+import TechnologyList from './TechnologyList';
 
-const ExperienceCard = (props: Props) => {
+const Icons: Array<Icon> = [
+  {
+    key: 'JavascriptIcon',
+    icon: <JavascriptIcon />,
+  },
+  {
+    key: 'SvelteIcon',
+    icon: <SvelteIcon />,
+  },
+  {
+    key: 'TailwindIcon',
+    icon: <TailwindIcon />,
+  },
+];
+
+const Sumary: Array<string> = [
+  'Sumary Points',
+  'Sumary Points',
+  'Sumary Points',
+  'Sumary Points',
+];
+
+const ExperienceCard = () => {
   return (
-    <article>
-      <motion.img
-        initial={{
-          y: -100,
-          opacity: 0,
-        }}
-        transition={{
-          duration: 1.2,
-        }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        className="h-32 w-32 rounded-full xl:w-[200px] xl:h-[200px] object-cover object-center"
-        src="/jobitx.jpg"
-      />
-
+    <article
+      className="flex flex-col rounded-lg items-center space-y-7 flex-shrink-0
+    w-[500px] md:w-[600px] xl:w-[900] snap-center bg-[#292929] p-10 hover:opacity-100 opacity-40 cursor-pointer transition-opacity duration-200 overflow-hidden"
+    >
+      <CompanyImage src="/jobitx.jpg" />
       <div className="px-0 md:px-10">
-        <h4 className="text-4xl font-light">Frontend Developer</h4>
-        <p className="font-bold text-2xl mt-1">Sub</p>
-        <div className="flex space-x-2 my-2"></div>
-        <p>Started work... -- Ended....</p>
-        <ul className="list-disc space-y-4 ml-5 text-lg">
-          <li>Summary points</li>
-          <li>Summary points</li>
-          <li>Summary points</li>
-          <li>Summary points</li>
-          <li>Summary points</li>
-          <li>Summary points</li>
-        </ul>
+        <Header title="Frontend Developer" subtitle="Subtitle" />
+        <TechnologyList icons={Icons} />
+        <p className="uppercase py-5 text-gray-300">
+          Started work... -- Ended....
+        </p>
+        <SumaryList list={Sumary} />
       </div>
     </article>
   );
