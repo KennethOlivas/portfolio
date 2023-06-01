@@ -2,6 +2,46 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+  .chip {
+    @apply hover:bg-white hover:text-indigo-700 px-2 py-1 rounded-full bg-neutral-800 cursor-default transition-all hover:-translate-y-1 duration-200;
+  }
+}
+
 body {
-  background: #18181b;
+  background: rgb(17, 17, 17);
+}
+
+:root {
+  --background: rgb(17, 17, 17);
+  --bg-opaque: rgb(17, 17, 17, 0.25);
+  --background-light: rgb(35, 35, 35);
+  --background-dark: rgb(8, 8, 8);
+
+  --text: rgb(235, 236, 243);
+  --brand: #4338ca;
+}
+
+.section-wrapper {
+  position: relative;
+  z-index: 10;
+  margin: auto;
+  padding: 9.6rem;
+  overflow: hidden;
+}
+
+@keyframes pulse-slow {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 8s ease-in-out infinite;
 }

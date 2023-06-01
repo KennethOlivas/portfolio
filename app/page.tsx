@@ -1,13 +1,17 @@
+"use client";
 import type { NextPage } from "next";
-import Link from "next/link";
-import HomeDashboard from "./components/HomeDashboard";
+import SocialIcons from "@components/SocialIcons/SocialIcons";
+import { Hero } from "@components/Hero";
+import About from "@components/about";
+import Background from "@/components/Background";
 
 const Home: NextPage = () => {
   return (
-    <div className="mt-14">
-      <section>
-        <HomeDashboard />
-      </section>
+    <div>
+      <Background />
+      <Hero />
+      <About />
+      <SocialIcons />
     </div>
   );
 };

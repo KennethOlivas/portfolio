@@ -1,0 +1,29 @@
+.outlineButton {
+  border: 1px solid var(--brand);
+
+  font-size: var(--text-sm);
+}
+
+.outlineButton::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  background: var(--brand);
+
+  height: 100%;
+  width: 100%;
+
+  left: -100%;
+  top: -100%;
+
+  transition: 0.4s left, 0.4s left;
+}
+
+.outlineButton:hover {
+  color: whitesmoke;
+}
+
+.outlineButton:hover::before {
+  left: 0;
+  top: 0;
+}
