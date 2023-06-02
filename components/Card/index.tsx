@@ -46,8 +46,8 @@ function Card({
                   : "hidden flex-col justify-center items-center"
               }>
               <Image
-                height={1700}
-                width={1700}
+                height={1920}
+                width={930}
                 src="/images/tictactoe.webp"
                 alt="test"
                 className=" w-full object-fill  h-full bg-contain"
