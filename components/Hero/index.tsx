@@ -28,9 +28,14 @@ export const Hero = () => {
             </span>{" "}
             I’ve been developing webs applications, using programing languajes
             like{" "}
-            <span className="underline decoration-indigo-600 font-semibold">Typescript</span>{" "}
-            and <span className="underline decoration-indigo-600 font-semibold">Python</span>.
-            I am looking for an opportunity to grow as a developer in web
+            <span className="underline decoration-indigo-600 font-semibold">
+              Typescript
+            </span>{" "}
+            and{" "}
+            <span className="underline decoration-indigo-600 font-semibold">
+              Python
+            </span>
+            . I am looking for an opportunity to grow as a developer in web
             application development companies. Able to effectively self-manage
             during independent projects as well as collaborate in a team
             setting.
@@ -46,7 +51,7 @@ export const Hero = () => {
         </Reveal>
       </div>
       <Reveal>
-        <div className="scale-110">
+        <div className="scale-110 md:left-12 lg:left-24 relative">
           <Lottie animationData={programmingComputer} />
         </div>
       </Reveal>
