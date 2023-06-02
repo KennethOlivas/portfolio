@@ -1,10 +1,5 @@
 import styles from "./socialIcons.module.scss";
-import {
-  AiFillLinkedin,
-  AiFillGithub,
-  AiFillTwitterCircle,
-  AiFillCodepenCircle,
-} from "react-icons/ai";
+import { AiFillLinkedin, AiFillGithub } from "react-icons/ai";
 import Link from "next/link";
 import { motion, useAnimation, useInView } from "framer-motion";
 import { GITHUB, LIKENEDIN } from "@/constants/SocialLinks";

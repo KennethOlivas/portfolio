@@ -7,8 +7,13 @@
     @apply hover:bg-white hover:text-indigo-700 px-2 py-1 rounded-full bg-neutral-800 cursor-default transition-all hover:-translate-y-1 duration-200;
   }
 }
-html {
-  scroll-behavior: smooth;
+
+* {
+  cursor: none;
+}
+
+body {
+  overscroll-behavior: none;
 }
 
 body {
@@ -20,7 +25,12 @@ body {
   --bg-opaque: rgb(17, 17, 17, 0.25);
   --background-light: rgb(35, 35, 35);
   --background-dark: rgb(8, 8, 8);
-
+  --var-white: rgba(255, 255, 255, 1);
+  --var-black: rgba(0, 0, 0, 1);
+  --var-grey: rgba(140, 140, 140, 1);
+  --var-red: rgba(255, 0, 0, 1);
+  --var-green: rgb(77, 211, 14);
+  --var-blue: rgba(0, 0, 255, 1);
   --text: rgb(235, 236, 243);
   --brand: #4338ca;
 }
@@ -29,7 +39,7 @@ body {
   position: relative;
   z-index: 10;
   margin: auto;
-  padding: 9.6rem;
+  padding-top: 2rem;
   overflow: hidden;
 }
 
@@ -49,3 +59,15 @@ body {
   animation: pulse-slow 8s ease-in-out infinite;
 }
 
+.cursor {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 16px;
+  background-color: white;
+  mix-blend-mode: difference;
+  z-index: 999;
+  pointer-events: none;
+}

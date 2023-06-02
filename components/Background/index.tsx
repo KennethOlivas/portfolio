@@ -1,5 +1,6 @@
 import { motion, useAnimation, useInView } from "framer-motion";
 import { useEffect, useRef } from "react";
+import { ScrollerMotion } from "scroller-motion";
 
 const Background = () => {
   const mainControls = useAnimation();

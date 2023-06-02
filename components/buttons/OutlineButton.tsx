@@ -10,7 +10,7 @@ const OutlineButton: FC<Props> = ({ children, onClick }) => {
   return (
     <button
       onClick={onClick}
-      className={`${styles.outlineButton} text-white px-6 py-3 cursor-pointer outline-none border-none bg-transparent rounded-md relative z-20 overflow-hidden transition-all duration-400 text-xl`}>
+      className={`${styles.outlineButton} text-white px-6 py-3 cursor-pointer  bg-transparent rounded-md relative z-20 overflow-hidden transition-all duration-400 text-xl`}>
       {children}
     </button>
   );

@@ -2,12 +2,12 @@ import { StandardButton } from "../buttons/StandardButton";
 import { Reveal } from "../utils/Reveal";
 import styles from "./hero.module.scss";
 import Lottie from "lottie-react";
-import programmingComputer from "../../lib/programmingComputer.json";
+import programmingComputer from "@/lib/programmingComputer.json";
 
 export const Hero = () => {
   return (
     <section
-      className={`flex justify-center items-center space-x-4 flex-col lg:flex-row p-2`}>
+      className={`flex justify-center items-center space-x-4 flex-col lg:flex-row p-2 mb-4`}>
       <div className={styles.copyWrapper}>
         <Reveal>
           <h1 className={`${styles.title} text-2xl md:text-6xl`}>
