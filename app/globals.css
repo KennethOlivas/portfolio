@@ -71,3 +71,27 @@ body {
   z-index: 999;
   pointer-events: none;
 }
+
+@keyframes clip {
+  100% {
+    clip-path: polygon(0% 0%, 50% 0%, 60% 100%, 10% 100%);
+  }
+  50% {
+    clip-path: polygon(0% 0%, 50% 0%, 60% 100%, 10% 100%);
+  }
+}
+
+.refresh {
+  padding: 10px;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+  width: 20px;
+  height: 20px;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}

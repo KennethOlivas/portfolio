@@ -7,8 +7,8 @@ import programmingComputer from "@/lib/programmingComputer.json";
 export const Hero = () => {
   return (
     <section
-      className={`flex justify-center items-center space-x-4 flex-col lg:flex-row p-2 mb-4`}>
-      <div className={styles.copyWrapper}>
+      className={`flex justify-center items-center space-x-4 flex-col lg:flex-row p-2 h-screen lg:pb-48`}>
+      <div>
         <Reveal>
           <h1 className={`${styles.title} text-2xl md:text-6xl`}>
             Hey, I&apos;m Kenneth Olivas<span>.</span>
