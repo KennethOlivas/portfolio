@@ -72,14 +72,6 @@ body {
   pointer-events: none;
 }
 
-@keyframes clip {
-  100% {
-    clip-path: polygon(0% 0%, 50% 0%, 60% 100%, 10% 100%);
-  }
-  50% {
-    clip-path: polygon(0% 0%, 50% 0%, 60% 100%, 10% 100%);
-  }
-}
 
 .refresh {
   padding: 10px;

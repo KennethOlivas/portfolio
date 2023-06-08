@@ -9,7 +9,9 @@ export const StandardButton = ({ children, onClick }: Props) => {
   return (
     <button
       onClick={onClick}
-      className="text-base font-semibold leading-none text-white py-4 px-10 bg-indigo-700 rounded hover:bg-indigo-600 outline-none">
+      className="text-base font-semibold leading-none rounded-md bg-black px-8 py-4 text-white shadow-lg
+      hover:bg-white hover:text-black transition-colors duration-200
+      ">
       {children}
     </button>
   );
