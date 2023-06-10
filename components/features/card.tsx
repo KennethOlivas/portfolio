@@ -1,8 +1,7 @@
 import classNames from "classnames";
 import { useFeatureStore } from "./store";
-import { motion } from "framer-motion";
 import Image from "next/image";
-import { Gallery } from "../Gallery";
+
 
 type FeatureCardProps = {
   gradient: string;
@@ -80,7 +79,7 @@ export const Music = ({ id }: CardProps) => {
         onClick={() => setFullscreenFeature(id)}
         className={classNames(
           "bg-cover rounded-xl shadow-lg transition-transform w-full h-full object-cover",
-          isFullscreen ? "scale-0" : "scale-100"
+          isFullscreen ? "scale-0 hidden" : "scale-100"
         )}
         src="/images/tictactoe.webp"
         width={1500}

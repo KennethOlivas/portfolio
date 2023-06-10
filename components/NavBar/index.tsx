@@ -3,12 +3,29 @@ import styles from "./navBar.module.scss";
 import type { FC } from "react";
 import OutlineButton from "../buttons/OutlineButton";
 import { motion } from "framer-motion";
-
 import Link from "next/link";
+import { useFeatureStore } from "../features/store";
+
+const item = {
+  exit: {
+    opacity: 0,
+    height: 0,
+    transition: {
+      ease: "easeInOut",
+      duration: 0.3,
+      delay: 1.2,
+    },
+  },
+};
 
 const NavBar: FC = () => {
+  const inViewFeature = useFeatureStore((state) => state.inViewFeature);
   return (
-    <header className={`${styles.heading}`}>
+    <motion.header
+      className={`${styles.heading}`}
+      variants={item}
+   
+      hidden={inViewFeature !== null}>
       <div className="flex space-x-6">
         <motion.span
           whileHover={{ transform: "translateY(-100%)" }}
@@ -29,7 +46,7 @@ const NavBar: FC = () => {
           My resume
         </Link>
       </OutlineButton>
-    </header>
+    </motion.header>
   );
 };
 

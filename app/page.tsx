@@ -166,8 +166,7 @@ const Home: NextPage = () => {
           </div>
         </div>
       </div>
-
-      <SocialIcons />
+      {!fullscreenFeature && <SocialIcons />}
 
       <Background />
     </>

@@ -21,6 +21,7 @@ const FeatureTitle = ({ children, id }: Props) => {
   });
   const setInViewFeature = useFeatureStore((state) => state.setInViewFeature);
   const inViewFeature = useFeatureStore((state) => state.inViewFeature);
+  const fullscreenFeature = useFeatureStore((state) => state.fullscreenFeature);
   const setFullscreenFeature = useFeatureStore(
     (state) => state.setFullscreenFeature
   );
@@ -38,7 +39,8 @@ const FeatureTitle = ({ children, id }: Props) => {
           "feature-title py-16 font-heading text-8xl transition-colors duration-200 text-justify px-0 md:pl-4 ",
           isInView
             ? "text-indigo-500 hover:text-indigo-500"
-            : "text-neutral-700 hover:text-neutral-400"
+            : "text-neutral-700 hover:text-neutral-400",
+          fullscreenFeature && "hidden"
         )}>
         {children}
       </p>
