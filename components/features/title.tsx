@@ -1,9 +1,10 @@
 import classNames from "classnames";
 import { useInView } from "framer-motion";
-import React, { useEffect, useRef } from "react";
+import React, { useContext, useEffect, useRef } from "react";
 import { useFeatureStore } from "./store";
 import { Reveal } from "../utils/Reveal";
 import dynamic from "next/dynamic";
+import { AnimatedCursorContext } from "@/context/AnimatedCursorManager";
 
 type Props = {
   children: React.ReactNode;
@@ -30,11 +31,23 @@ const FeatureTitle = ({ children, id }: Props) => {
     if (!isInView && inViewFeature === id) setInViewFeature(null);
   }, [isInView, id, setInViewFeature, inViewFeature]);
 
+  const { cursorStyleHandler } = useContext(AnimatedCursorContext);
+
+  const textEnter = () => {
+    cursorStyleHandler("cursor-text");
+  };
+
+  const textLeave = () => {
+    cursorStyleHandler("cursor");
+  };
+
   return isBrowser ? (
     <Reveal>
       <p
         onClick={() => setFullscreenFeature(id)}
         ref={ref}
+        onMouseEnter={textEnter}
+        onMouseLeave={textLeave}
         className={classNames(
           "feature-title py-16 font-heading text-8xl transition-colors duration-200 text-justify px-0 md:pl-4 ",
           isInView

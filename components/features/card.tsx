@@ -2,7 +2,6 @@ import classNames from "classnames";
 import { useFeatureStore } from "./store";
 import Image from "next/image";
 
-
 type FeatureCardProps = {
   gradient: string;
   children: React.ReactNode;
@@ -33,11 +32,6 @@ const FeatureCard = ({ gradient, children, id }: FeatureCardProps) => {
         )}
       />
       {children}
-      <button
-        onClick={() => setFullscreenFeature(id)}
-        className="show-me-btn absolute bottom-6 right-6 rounded-xl bg-black px-4 py-2 text-white shadow-lg">
-        Show me
-      </button>
     </div>
   );
 };
@@ -50,18 +44,50 @@ export const Todo = ({ id }: CardProps) => {
   );
 };
 
-export const Colors = ({ id }: CardProps) => {
+export const ReturnOnDemandCard = ({ id }: CardProps) => {
+  const fullscreenFeature = useFeatureStore((store) => store.fullscreenFeature);
+  const isFullscreen = fullscreenFeature === id;
+  const setFullscreenFeature = useFeatureStore(
+    (state) => state.setFullscreenFeature
+  );
+
   return (
-    <FeatureCard id={id} gradient="from-[#f5fbff] to-[#addeff]">
-      <span />
+    <FeatureCard id={id} gradient="from-[#a78afe] to-[#adf8ff]">
+      <Image
+        onClick={() => setFullscreenFeature(id)}
+        className={classNames(
+          "bg-cover rounded-xl shadow-lg transition-transform w-full h-full object-cover",
+          isFullscreen ? "scale-0 hidden" : "scale-100"
+        )}
+        src="/images/rod.webp"
+        width={1500}
+        height={1500}
+        alt=""
+      />
     </FeatureCard>
   );
 };
 
 export const Availability = ({ id }: CardProps) => {
+  const fullscreenFeature = useFeatureStore((store) => store.fullscreenFeature);
+  const isFullscreen = fullscreenFeature === id;
+  const setFullscreenFeature = useFeatureStore(
+    (state) => state.setFullscreenFeature
+  );
+
   return (
-    <FeatureCard id={id} gradient="from-[#f5fff7] to-[#adf8ff]">
-      <span />
+    <FeatureCard id={id} gradient="from-[#a78afe] to-[#adf8ff]">
+      <Image
+        onClick={() => setFullscreenFeature(id)}
+        className={classNames(
+          "bg-cover rounded-xl shadow-lg transition-transform w-full h-full object-cover",
+          isFullscreen ? "scale-0 hidden" : "scale-100"
+        )}
+        src="/images/rod.webp"
+        width={1500}
+        height={1500}
+        alt=""
+      />
     </FeatureCard>
   );
 };

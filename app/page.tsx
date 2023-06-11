@@ -13,11 +13,11 @@ import { Reveal } from "@/components/utils/Reveal";
 import { Gallery } from "@/components/Gallery";
 import {
   Todo,
-  Colors,
   Availability,
   Music,
   SchedulingLinks,
   Team,
+  ReturnOnDemandCard,
 } from "@/components/features/card";
 import { OtherVisual, MusicVisual } from "@/components/features/visual";
 import { stagger, useAnimate } from "framer-motion";
@@ -25,6 +25,8 @@ import { useFeatureStore } from "@/components/features/store";
 import { useHidePageOverflow } from "@/lib/toggle-page-overflow";
 import { useEscapePress } from "@/lib/use-escape-press";
 import { FeatureTitle } from "@/components/features/title";
+import NavBar from "@/components/NavBar";
+import AnimatedCursorProvider from "@/context/AnimatedCursorManager";
 
 const features = [
   {
@@ -36,7 +38,7 @@ const features = [
   {
     title: "Return on Demand",
     id: "RoD",
-    card: Colors,
+    card: ReturnOnDemandCard,
     visual: OtherVisual,
   },
   {
@@ -128,7 +130,8 @@ const Home: NextPage = () => {
   }, [animate, fullscreenFeature, lastFullscreenFeature]);
 
   return (
-    <>
+    <AnimatedCursorProvider>
+      <NavBar />
       <CustomCursor />
       <Hero />
       <div>
@@ -169,7 +172,7 @@ const Home: NextPage = () => {
       {!fullscreenFeature && <SocialIcons />}
 
       <Background />
-    </>
+    </AnimatedCursorProvider>
   );
 };
 

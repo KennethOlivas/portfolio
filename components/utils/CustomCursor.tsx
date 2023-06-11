@@ -1,6 +1,9 @@
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
 import { motion, useMotionValue, useSpring } from "framer-motion";
+import { AnimatedCursorContext } from "@/context/AnimatedCursorManager";
 const CustomCursor = () => {
+  const { cursorType } = useContext(AnimatedCursorContext);
+  console.log(cursorType);
   const cursorX = useMotionValue(-100);
   const cursorY = useMotionValue(-100);
 
@@ -22,7 +25,7 @@ const CustomCursor = () => {
   }, [cursorX, cursorY]);
   return (
     <motion.div
-      className="cursor"
+      className={`${cursorType} duration-100 transition-all ease-linear`}
       style={{
         translateX: cursorXSpring,
         translateY: cursorYSpring,

@@ -72,6 +72,19 @@ body {
   pointer-events: none;
 }
 
+.cursor-text {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 72px;
+  height: 72px;
+  border-radius: 38px;
+  background-color: white;
+  mix-blend-mode: difference;
+  z-index: 999;
+  pointer-events: none;
+}
+
 
 .refresh {
   padding: 10px;

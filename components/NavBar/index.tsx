@@ -19,13 +19,16 @@ const item = {
 };
 
 const NavBar: FC = () => {
+  const fullscreenFeature = useFeatureStore((state) => state.fullscreenFeature);
   const inViewFeature = useFeatureStore((state) => state.inViewFeature);
   return (
     <motion.header
-      className={`${styles.heading}`}
-      variants={item}
-   
-      hidden={inViewFeature !== null}>
+      className={`${
+        (fullscreenFeature !== null) || (inViewFeature !== null)
+          ? "hidden"
+          : styles.heading
+      }`}
+      variants={item}>
       <div className="flex space-x-6">
         <motion.span
           whileHover={{ transform: "translateY(-100%)" }}
