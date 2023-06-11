@@ -2,7 +2,7 @@ import classNames from "classnames";
 import { useInView } from "framer-motion";
 import React, { useContext, useEffect, useRef } from "react";
 import { useFeatureStore } from "./store";
-import { Reveal } from "../utils/Reveal";
+import { Reveal } from "../../utils/Reveal";
 import dynamic from "next/dynamic";
 import { AnimatedCursorContext } from "@/context/AnimatedCursorManager";
 

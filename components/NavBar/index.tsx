@@ -4,7 +4,7 @@ import type { FC } from "react";
 import OutlineButton from "../buttons/OutlineButton";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { useFeatureStore } from "../features/store";
+import { useFeatureStore } from "../Proyects/features/store";
 
 const item = {
   exit: {
@@ -24,7 +24,7 @@ const NavBar: FC = () => {
   return (
     <motion.header
       className={`${
-        (fullscreenFeature !== null) || (inViewFeature !== null)
+        fullscreenFeature !== null || inViewFeature !== null
           ? "hidden"
           : styles.heading
       }`}
